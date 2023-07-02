@@ -8,14 +8,20 @@ const id = document.querySelector("#id"),
 
 const join = (e) => {
   e.preventDefault();
+  if (!id.value) {
+    return alert("아이디를 입력해 주세요.");
+  }
+  if (pw.value !== confirmPw.value) {
+    return alert("비밀번호가 일치하지 않습니다.");
+  }
+
   const req = {
     id: id.value,
     name: name.value,
     pw: pw.value,
-    confirmPw: confirmPw.value,
   };
   console.log(req);
-  fetch("/admin", {
+  fetch("/join", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -25,7 +31,8 @@ const join = (e) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        location.href = "/login";
+        alert("회원가입 되었습니다.");
+        location.href = "/";
       } else {
         alert(res.msg);
       }
