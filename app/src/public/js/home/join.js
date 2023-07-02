@@ -1,15 +1,20 @@
 "use strict";
 
 const id = document.querySelector("#id"),
+  name = document.querySelector("#name"),
   pw = document.querySelector("#pw"),
-  loginBtn = document.querySelector("#btn");
+  confirmPw = document.querySelector("#confirmPw"),
+  joinBtn = document.querySelector("#btn");
 
-const login = (e) => {
+const join = (e) => {
   e.preventDefault();
   const req = {
     id: id.value,
+    name: name.value,
     pw: pw.value,
+    confirmPw: confirmPw.value,
   };
+  console.log(req);
   fetch("/admin", {
     method: "POST",
     headers: {
@@ -20,14 +25,14 @@ const login = (e) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        location.href = "/";
+        location.href = "/login";
       } else {
         alert(res.msg);
       }
     })
     .catch((err) => {
-      console.error("로그인 중 에러 발생");
+      console.error("회원가입 중 에러 발생");
     });
 };
 
-loginBtn.addEventListener("click", login);
+joinBtn.addEventListener("click", join);
