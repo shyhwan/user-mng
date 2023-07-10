@@ -10,7 +10,7 @@ const login = (e) => {
     id: id.value,
     pw: pw.value,
   };
-  fetch("/admin", {
+  fetch("/list", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
