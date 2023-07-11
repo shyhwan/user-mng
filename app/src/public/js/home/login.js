@@ -10,7 +10,7 @@ const login = (e) => {
     id: id.value,
     pw: pw.value,
   };
-  fetch("/list", {
+  fetch("/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -20,7 +20,7 @@ const login = (e) => {
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        location.href = "/";
+        location.href = "/board/list";
       } else {
         alert(res.msg);
       }
