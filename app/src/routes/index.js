@@ -10,6 +10,7 @@ router.get("/join", homeCtrl.output.join);
 router.get("/admin", homeCtrl.output.admin);
 router.get("/board/list", boardCtrl.output.list);
 router.get("/board/view", boardCtrl.output.view);
+router.get("/board/edit", boardCtrl.output.edit);
 
 router.post("/", homeCtrl.process.login);
 router.post("/join", homeCtrl.process.join);

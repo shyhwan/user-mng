@@ -10,6 +10,9 @@ const output = {
   view: (req, res) => {
     res.render("board/view");
   },
+  edit: (req, res) => {
+    res.render("board/edit");
+  },
 };
 
 // const process = {

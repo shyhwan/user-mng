@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/board/view.js" defer></script>
+    <script src="/js/board/edit.js" defer></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Board-Edit</title>
+</head>
+
+<body>
+    <form class="container mt-5">
+        <div class="text-center">
+            <h1 id="boardTitle" class="">새 글작성</h1>
+        </div>
+        <table class="table table-bordered">
+            <tr class="text-center">
+                <th>제목</th>
+                <td><input type="text" class="form-control" placeholder="제목을 입력하세요."></td>
+            </tr>
+            <tr class="text-center">
+                <th>내용</th>
+                <td><textarea class="form-control"></textarea></td>
+            </tr>
+        </table>
+        <div align="right">
+            <button id="save" class="btn btn-dark">저장</button>
+            <button id="cancel" class="btn  btn-dark">취소</button>
+        </div>
+    </form>
+</body>
+
+</html>
